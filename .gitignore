@@ -1,0 +1,11 @@
+mcce.cbp
+mcce.layout
+.idea
+*.swp
+*.o
+*.pyc
+*~
+.svn
+bin/delphi
+bin/mcce
+lib/mcce.a
