@@ -30,30 +30,20 @@ void free_param() {
 
 To test run the mcce code, refer [this page](https://sites.google.com/site/mccewiki/install-mcce)
 
-
 ## What is on the roadmap?
-1. Start from Junjun's version to
-  * remove dependency on gdbm,
-  * use text version of energy lookup table,
-  * include gfortran version of delphi
-2. Merge with mcce 2.5.1 to
-  * add step 5, Monte Carlo post-process
-  * enable APBS solver
-  * display H bond network
-3. Upgrade to mcce 3.5 to
-  * add an ele column to opp file for native conformers at single-conformer condition
-  * separate the calculation of conformer VDW from step 3
-  * atom based VDW output
-4. Integrate delphi as function call   
-
-Installation:
-glib.h error
-
-Install glib:
-```sudo apt-get install libglib2.0-dev```
-
-See the command options:
-```pkg-config --cflags --libs glib-2.0```
-
-Add the above output to makefile as compiler option (the next is an example):
-```-I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -lglib-2.0```
+1. Step 4 writes out microstates only
+  * achieve the most efficient sampling
+  * write tools to do analysis
+2. Analysis tools:
+  * MC trajectory
+  * Occupancy table
+  * Titration curve fitting
+  * Entropy correction
+  * Interaction network and cluster identification
+  * Cluster energy analysis
+3. Chemical potential titration
+  * add a column in head3.lst to titration chemical potential
+4. Atom based VDW calculation
+  * Use atom based parameters
+  * separate from delphi calculation
+5. Integrate delphi as function call   

@@ -17,19 +17,19 @@ Input and Output:
 prot.pdb                                                    (INPDB)
 
 Steps:
-t        step 1: pre-run, pdb-> mcce pdb                    (DO_PREMCCE)
-t        step 2: make rotatmers                             (DO_ROTAMERS)
+f        step 1: pre-run, pdb-> mcce pdb                    (DO_PREMCCE)
+f        step 2: make rotatmers                             (DO_ROTAMERS)
 t        step 3: do energy calculations                     (DO_ENERGY)
-f        step 4: monte carlo sampling                       (DO_MONTE)
+t        step 4: monte carlo sampling                       (DO_MONTE)
 ==============================================================================
 
 
 ==============================================================================
 Less modified entries
 ------------------------------------------------------------------------------
-8.0      Protein dielectric constant for DelPhi             (EPSILON_PROT)
-/home/jmao/MCCE/mcce2.7/extra.tpl                                (EXTRA)
-/home/mcce/MCCE/mcce2.7/name.txt MCCE renaming rule.             (RENAME_RULES)
+4.0      Protein dielectric constant for DelPhi             (EPSILON_PROT)
+./extra.tpl                                (EXTRA)
+/home/jmao/projects/mcce3/name.txt MCCE renaming rule.             (RENAME_RULES)
 
 ph       "ph" for pH titration, "eh" for eh titration       (TITR_TYPE)
 0.0      Initial pH                                         (TITR_PH0)
@@ -44,29 +44,29 @@ ph       "ph" for pH titration, "eh" for eh titration       (TITR_TYPE)
 #############################################################################
 MODIFYING FOLLOWING ENTRIES REQUIRE ADVANCED KNOWLEDGE:
 -----------------------------------------------------------------------------
-/home/jmao/MCCE/mcce2.7                                          (MCCE_HOME)
-f       Minimize output files                               (MINIMIZE_SIZE)
+/home/jmao/projects/mcce3                                       (MCCE_HOME)
+t       Minimize output files                               (MINIMIZE_SIZE)
 
 Options specific to each step:
 
 step 1:
-f        Label terminal residues?                           (TERMINALS)
+t        Label terminal residues?                           (TERMINALS)
 2.0      distance limit of reporting clashes                (CLASH_DISTANCE)
 0.05     cut off water if % SAS exceeds this number         (H2O_SASCUTOFF)
 
 step 2:
 f        Use specific control (head1.lst) on rotamer making (ROT_SPECIF)
-f        Do swap (stereo isotope)                           (ROT_SWAP)
+t        Do swap (stereo isotope)                           (ROT_SWAP)
 f        Do rotate?                                         (PACK)
 6        number of rotamers in a bond rotation              (ROTATIONS)
-f        Do swing?                                          (SWING)
+t        Do swing?                                          (SWING)
 15.0     phi in degrees of swing                            (PHI_SWING)
 1.00     SAS Threshold not making rotamers                  (SAS_CUTOFF)
 10.0     Cutoff of self vdw in kcal/mol                     (VDW_CUTOFF)
 5000     number of repacks                                  (REPACKS)
 0.01     occupancy cutoff of repacks                        (REPACK_CUTOFF)
 
-f        h-bond directed rotamer making, requir 't' on Do rotate  (HDIRECTED)
+t        h-bond directed rotamer making, requir 't' on Do rotate  (HDIRECTED)
 1.0      threshold for two conformers being different       (HDIRDIFF)
 36       Limit number of the Hbond conformers               (HDIRLIMT)
 
@@ -96,7 +96,7 @@ step 3:
 1.4      Radius of the probe                                (RADIUS_PROBE)
 2.0      Ion radius                                         (IONRAD)
 0.15     Salt                                               (SALT)
-/home/jmao/MCCE/mcce2.7/bin/delphi DelPhi executable             (DELPHI_EXE)
+/home/jmao/projects/mcce3/bin/delphi DelPhi executable             (DELPHI_EXE)
 
 step 4:
 5.0      Big pairwise threshold to make big list            (BIG_PAIRWISE)
@@ -114,7 +114,7 @@ step 4:
 # Advanced options:
 0         delphi start conformer number, 0 based            (DELPHI_START)
 9999     delphi end conformer number, self included        (DELPHI_END)
-/tmp      delphi temporary file folder, "/tmp" uses node    (DELPHI_FOLDER)
+/dev/shm      delphi temporary file folder, "/tmp" uses node    (PBE_FOLDER)
 t         clean up delphi focusing directory?               (DELPHI_CLEAN)
 debug.log                                                   (DEBUG_LOG)
 new.tpl     local parameter file for unrecognized res       (NEWTPL)
