@@ -64,4 +64,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+.ftpconfig
 >>>>>>> b55668eb44e189fa561bd3a33404b8943dad273c
