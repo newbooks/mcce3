@@ -14,6 +14,9 @@ lib/mcce.a
 # Prerequisites
 *.d
 
+# temp files
+~*
+
 # Object files
 *.o
 *.ko
