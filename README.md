@@ -32,7 +32,10 @@ To test run the mcce code, refer [this page](https://sites.google.com/site/mccew
 
 ## What is on the roadmap?
 1. Step 4 writes out microstates only
-  * achieve the most efficient sampling
+  * achieve the most efficient sampling. Three stages:
+    MC record nothing (annealing stage, throw away runs)
+    MC record as occ (reduction stage, reduce run)
+    MC record states (sampling stage, state ensembles)
   * write tools to do analysis
 2. Analysis tools:
   * MC trajectory
