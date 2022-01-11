@@ -143,9 +143,9 @@ class Protein:
         for res in self.residue:
             for conf in res.conf:
                 for atom in conf.atom:
-                    print atom.atomID
+                    print(atom.atomID)
                     for atom2 in atom.connect12:
-                        print "   -> %s" % atom2.atomID
+                        print("   -> %s" % atom2.atomID)
         return
 
     def make_connect13(self):
@@ -177,18 +177,18 @@ class Protein:
         for res in self.residue:
             for conf in res.conf:
                 for atom in conf.atom:
-                    print atom.atomID
+                    print(atom.atomID)
                     for atom2 in atom.connect13:
-                        print "   -X-> %s" % atom2.atomID
+                        print("   -X-> %s" % atom2.atomID)
         return
 
     def print_connect14(self):
         for res in self.residue:
             for conf in res.conf:
                 for atom in conf.atom:
-                    print atom.atomID
+                    print(atom.atomID)
                     for atom2 in atom.connect14:
-                        print "   -X-X-> %s" % atom2.atomID
+                        print("   -X-X-> %s" % atom2.atomID)
         return
 
     def exportpdb(self, fname):
@@ -202,11 +202,11 @@ class Protein:
 
     def print_atom_structure(self):
         for res in self.residue:
-            print "Residue %s" % res.resID
+            print("Residue %s" % res.resID)
             for conf in res.conf:
-                print "-->Conformer %s" % conf.confID
+                print("-->Conformer %s" % conf.confID)
                 for atom in conf.atom:
-                    print "---->Atom %s" % atom.atomID
+                    print("---->Atom %s" % atom.atomID)
         return
 
 if __name__ == "__main__":

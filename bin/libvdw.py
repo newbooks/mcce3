@@ -33,7 +33,7 @@ class VDWPARM:
                         Ctype = fields[1]
                         pair = fields[2]
                         if (Ctype, pair) in self.vdwparam:
-                            print "WARNING: %s of %s entry duplicates detected." % (Ctype, pair)
+                            print( "WARNING: %s of %s entry duplicates detected." % (Ctype, pair))
                         self.vdwparam[(Ctype, pair)] = float(fields[3])
                     elif fields[0] == "SCALING":
                         Vtype = fields[1]
@@ -67,6 +67,8 @@ def initdb():
         parmdir = mcce_home+"/param04"
     elif epsilon_prot == "8.0":
         parmdir = mcce_home+"/param08"
+
+    parmdir = "./param"
 
     tplfiles = [join(parmdir, f) for f in listdir(parmdir) if f.endswith(".tpl")]
     tplfiles.append(extra)
@@ -108,7 +110,7 @@ def vdw(atom1, atom2):
             mark = "*"
         else:
             mark = ""
-        print "Atom %s <-> %s: %.3f  (d = %.3f) %s" % (atom1.atomID, atom2.atomID, e, d, mark)
+        print("Atom %s <-> %s: %.3f  (d = %.3f) %s" % (atom1.atomID, atom2.atomID, e, d, mark))
 
     return e
 
@@ -132,5 +134,5 @@ def vdw_conf(conf1, conf2):
 
 if __name__ == "__main__":
     initdb()
-    print vdwdb.vdwparam
+    print (vdwdb.vdwparam)
     #print vdwdb.scaling
